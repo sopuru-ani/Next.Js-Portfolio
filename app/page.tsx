@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import { motion, easeOut } from "motion/react";
 
 import Header from "@/components/Header";
 import About from "@/components/About";
@@ -10,6 +11,15 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+  const fallInVariant = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: easeOut },
+    },
+  };
+
   const homeRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
@@ -29,7 +39,11 @@ export default function Home() {
       <div className="flex flex-col h-dvh w-full">
         <Header sectionRefs={sectionRefs} />
         <main className="flex-1 w-full overflow-y-auto px-2 scroll-smooth no-scrollbar">
-          <section
+          <motion.section
+            variants={fallInVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             ref={homeRef}
             id="home"
             className="relative min-h-full flex items-start justify-center pt-16 px-4 md:pt-32"
@@ -38,8 +52,12 @@ export default function Home() {
             <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
               ↓ scroll
             </div>
-          </section>
-          <section
+          </motion.section>
+          <motion.section
+            variants={fallInVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             ref={aboutRef}
             id="about"
             className="relative min-h-full flex flex-col justify-center items-center px-4"
@@ -48,8 +66,12 @@ export default function Home() {
             {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
               ↓ scroll
             </div> */}
-          </section>
-          <section
+          </motion.section>
+          <motion.section
+            variants={fallInVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             ref={projectsRef}
             id="projects"
             className="relative min-h-full flex items-center justify-center px-4"
@@ -58,8 +80,12 @@ export default function Home() {
             {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
               ↓ scroll
             </div> */}
-          </section>
-          <section
+          </motion.section>
+          <motion.section
+            variants={fallInVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             ref={skillsRef}
             id="skills"
             className="relative min-h-full flex items-center justify-center px-4"
@@ -68,15 +94,19 @@ export default function Home() {
             {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
               ↓ scroll
             </div> */}
-          </section>
-          <section
+          </motion.section>
+          <motion.section
+            variants={fallInVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             ref={contactRef}
             id="contact"
             className="relative min-h-full flex flex-col px-4"
           >
             <Contact />
             <Footer />
-          </section>
+          </motion.section>
         </main>
       </div>
     </>
