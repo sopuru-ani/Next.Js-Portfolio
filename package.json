@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reset": "rm -rf .next node_modules && npm install"
+    "reset": "rmdir /s /q .next node_modules && npm install"
   },
   "dependencies": {
     "jetbrains-mono": "^1.0.6",
