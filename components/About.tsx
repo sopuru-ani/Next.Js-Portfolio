@@ -10,30 +10,32 @@ function About() {
         <div className="space-y-2 leading-relaxed">
           <p>
             <span className="text-giorno-500">&gt;</span> Computer science
-            student with a passion for building functional and visually
-            intentional web applications.
+            student who loves turning ideas into functional, polished, and
+            interactive web apps.
           </p>
 
           <p>
-            <span className="text-giorno-500">&gt;</span> My interest in web
-            development began in JSS3, driven by curiosity about how websites
-            work under the hood.
+            <span className="text-giorno-500">&gt;</span> My interest in
+            programming stemmed back to my days in middle school when i got my
+            first laptop and had started writing HTML programs
           </p>
 
           <p>
-            <span className="text-giorno-500">&gt;</span> I enjoy working across
-            the stack — designing responsive interfaces, building scalable
-            backends, and experimenting with new ideas.
+            <span className="text-giorno-500">&gt;</span> I like understanding
+            how things work end-to-end, from the UI users see to the logic
+            running behind the scenes.
           </p>
 
           <p>
-            <span className="text-giorno-500">&gt;</span> I value clean code,
-            thoughtful design, and continuous learning.
+            <span className="text-giorno-500">&gt;</span> Most of my learning
+            comes from building, breaking, and rebuilding projects until they
+            feel right.
           </p>
 
           <p>
-            <span className="text-giorno-500">&gt;</span> Outside of coding, I
-            enjoy chess, anime, and creative problem-solving.
+            <span className="text-giorno-500">&gt;</span> When I’m not coding,
+            I’m usually in the word, watching anime, exploring new tech, or
+            tinkering with fun side projects.
           </p>
           <br></br>
           <p className="text-gray-500">-- end of file --</p>

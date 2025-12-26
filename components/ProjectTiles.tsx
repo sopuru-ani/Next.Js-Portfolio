@@ -25,8 +25,12 @@ function ProjectTiles({ title, description, tech, view, source }: Props) {
         ))}
       </div>
       <div className="ml-4 flex gap-4 text-jotaro-500">
-        <a href="#">[{view}]</a>
-        <a href="#">[{source}]</a>
+        <a href={view} target="_blank">
+          [view]
+        </a>
+        <a href={source} target="_blank">
+          [source]
+        </a>
       </div>
     </div>
   );
