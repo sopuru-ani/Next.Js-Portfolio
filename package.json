@@ -10,9 +10,12 @@
     "reset": "rm -rf .next node_modules && npm install"
   },
   "dependencies": {
+    "jetbrains-mono": "^1.0.6",
+    "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

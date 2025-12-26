@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("@/fonts/webfonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Bold";
+  src: url("@/fonts/webfonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono Thin";
+  src: url("@/fonts/webfonts/JetBrainsMono-Thin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0d0d;
+  /* --font-jetbrainsmonothin: "JetBrains Mono Thin", monospace; */
+  /* --background: #111; */
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-blackbg-500: var(--background);
+  --color-deepblue-500: #111827;
+  --color-jotaro-500: #6d28d9;
+  --color-jotarohover-500: #8b5cf6;
+  --color-diavolo-500: #b11226;
+  --color-diavolohover-500: #dc2626;
+  --color-giorno-500: #facc15;
+  --color-giornohover-500: #fde047;
+
+  --font-jetbrainsmono: "JetBrains Mono", monospace;
+  --font-jetbrainsmonobold: "JetBrains Mono Bold", monospace;
+  --font-jetbrainsmonothin: "JetBrains Mono Thin", monospace;
+
+  --breakpoint-sm: 400px;
+  /* --color-teal-500: #14B8A6;
+  --color-tealhover-500: #2DD4BF; */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* body {
+  background: var(--background);
+  color: #fff;
+  font-family: "JetBrains Mono", monospace;
+} */
+
+@layer base {
+  body {
+    font-family: var(--font-jetbrainsmono);
+    @apply bg-blackbg-500 text-white;
+  }
+  .terminal-path {
+    font-family: var(--font-jetbrainsmonothin);
+    @apply text-sm mb-1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
 }
+
+@utility terminal-header {
+  @apply bg-blackbg-500 text-white flex flex-col p-2  w-full z-50;
+}
+
+@utility cursor {
+  animation: blink 1.5s infinite;
+}
+
+@utility setActive {
+  @apply border-t-2 bg-gray-700 border-t-jotaro-500  text-giorno-500;
+}
+
+/* .terminal-header {
+  background: #0d0d0d;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+} */
+
+/* @utility terminal-path {
+  font-family: var(--font-jetbrainsmonothin);
+  @apply text-sm mb-1 font-extralight;
+} */
+
+/* .terminal-path {
+  font-family: "JetBrains Mono Thin", monospace;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+} */
+
+@layer components {
+  .terminal-path .user,
+  .terminal-path .path {
+    @apply text-jotaro-500 font-bold;
+  }
+
+  .terminal-path .cursor {
+    animation: blink 1.5s infinite;
+    @apply inline-block  ml-0.5 w-2 bg-jotaro-500;
+  }
+
+  .terminal-nav ul {
+    @apply flex  text-sm sm:text-lg;
+  }
+
+  .terminal-nav li {
+    @apply cursor-pointer text-gray-200 transition-colors duration-200    px-3 py-2  border-r  border-r-gray-700;
+  }
+
+  .terminal-nav li:hover,
+  .terminal-nav li.active {
+    @apply text-jotaro-500;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@utility animate-terminal-bounce {
+  animation: terminal-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes terminal-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+/* .terminal-path .user,
+.terminal-path .path {
+  color: var(--color-jotaro-500);
+  font-weight: bold;
+} */
+
+/* .terminal-path .cursor {
+  display: inline-block;
+  margin-left: 2px;
+  width: 8px;
+  background: var(--color-jotaro-500);
+  animation: blink 1s infinite;
+} */
+
+/* .terminal-nav ul {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.9rem;
+} */
+
+/* .terminal-nav li {
+  cursor: pointer;
+  color: #e5e7eb;
+  transition: color 0.2s;
+}
+
+.terminal-nav li:hover,
+.terminal-nav li.active {
+  color: var(--color-jotaro-500); 
+} */

@@ -1,65 +1,249 @@
+"use client";
+import { useRef } from "react";
+
+import Header from "@/components/Header";
+import About from "@/components/About";
+import ProjectTiles from "@/components/ProjectTiles";
+import SkillPill from "@/components/SkillPill";
 import Image from "next/image";
 
+import { FileText } from "lucide-react";
 export default function Home() {
+  const homeRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const skillsRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+
+  // Map section names to refs
+  const sectionRefs: Record<string, React.RefObject<HTMLElement | null>> = {
+    Home: homeRef,
+    About: aboutRef,
+    Skills: skillsRef,
+    Projects: projectsRef,
+    Contact: contactRef,
+  };
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <div className="flex flex-col h-dvh w-full">
+        <Header sectionRefs={sectionRefs} />
+        <main className="flex-1 w-full overflow-y-auto px-2 scroll-smooth no-scrollbar">
+          <section
+            ref={homeRef}
+            id="home"
+            className="relative min-h-full flex items-start justify-center pt-16 px-4 md:pt-32"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="flex flex-col md:flex-row gap-6 max-w-4xl w-full">
+              {/* Avatar */}
+              <div className="flex justify-center md:justify-start">
+                <Image
+                  src="/profile.jpg"
+                  alt="Profile Picture"
+                  width={180}
+                  height={180}
+                  className="rounded-md border border-gray-600"
+                />
+              </div>
+
+              {/* Info.txt panel */}
+              <div className="flex-1 bg-gray-800 border border-gray-700 rounded-sm text-lg">
+                {/* File tab */}
+                <div className="bg-gray-700 inline-flex items-center gap-2 px-3 py-1 border-t-2 border-jotaro-500 text-giorno-500">
+                  <FileText className="w-4 h-4 text-white" />
+                  <span>Intro.txt</span>
+                </div>
+
+                {/* File content */}
+                <div className="p-3 text-lg">
+                  <p className="terminal-path pb-1 mb-1 border-b border-gray-700">
+                    <span className="user text-white">app</span>
+                    <span className="path text-white"> &gt; page.tsx &gt;</span>
+                    <span className="path"> intro</span>
+                  </p>
+
+                  <p>
+                    <span className="text-gray-500 mr-2">1</span>
+                    Sopuru Ani
+                  </p>
+
+                  <p>
+                    <span className="text-gray-500 mr-2">2</span>
+                    Computer Science Student | Full Stack Developer
+                  </p>
+
+                  <p>
+                    <span className="text-gray-500 mr-2">3</span>I build apps
+                    for the fun of it.
+                    <span className="cursor">|</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
+              ↓ scroll
+            </div>
+          </section>
+          <section
+            ref={aboutRef}
+            id="about"
+            className="relative min-h-full flex flex-col justify-center items-center px-4"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <About />
+            {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
+              ↓ scroll
+            </div> */}
+          </section>
+          <section
+            ref={projectsRef}
+            id="projects"
+            className="relative min-h-full flex items-center justify-center px-4"
+          >
+            <div className="bg-deepblue-500 w-full max-w-4xl p-4 border border-gray-700">
+              <h1 className="mb-4">
+                <span className="text-jotaro-500">sopuru</span>
+                @portfolio:~$ ls projects
+              </h1>
+
+              <div className="space-y-4 text-sm">
+                <ProjectTiles
+                  title="jojo-stand-encyclopedia"
+                  description="A JoJo-themed web app with searchable Stand cards."
+                  tech={[
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Express",
+                    "MongoDB",
+                    "Node.js",
+                  ]}
+                  view="view"
+                  source="source"
+                />
+                <ProjectTiles
+                  title="jojo-stand-encyclopedia"
+                  description="A JoJo-themed web app with searchable Stand cards."
+                  tech={[
+                    "HTML",
+                    "CSS",
+                    "JavaScript",
+                    "Express",
+                    "MongoDB",
+                    "Node.js",
+                  ]}
+                  view="view"
+                  source="source"
+                />
+                <ProjectTiles
+                  title="qr-manager"
+                  description="A web app for creating and managing dynamic qr codes"
+                  tech={[
+                    "React",
+                    "Tailwind",
+                    "JavaScript",
+                    "Express",
+                    "MongoDB",
+                    "Node.js",
+                    "qrcode",
+                  ]}
+                  view="view"
+                  source="source"
+                />
+              </div>
+            </div>
+            {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
+              ↓ scroll
+            </div> */}
+          </section>
+          <section
+            ref={skillsRef}
+            id="skills"
+            className="relative min-h-full flex items-center justify-center px-4"
+          >
+            <div className="bg-deepblue-500 w-full max-w-4xl p-4 border border-gray-700">
+              {/* Terminal header */}
+              <h1 className="mb-4">
+                <span className="text-jotaro-500">sopuru</span>
+                @portfolio:~$ cat skills.txt
+              </h1>
+
+              {/* Frontend */}
+              <p className="text-giorno-500 mt-2 mb-1">&gt; Frontend</p>
+              <div className="flex flex-wrap gap-2 ml-4 mb-3">
+                <SkillPill size={"sm"} pill="React" />
+                <SkillPill size={"sm"} pill="Next.js" />
+                <SkillPill size={"sm"} pill="Tailwind" />
+                <SkillPill size={"sm"} pill="JavaScript" />
+                <SkillPill size={"sm"} pill="TypeScript" />
+              </div>
+
+              {/* Backend */}
+              <p className="text-giorno-500 mt-2 mb-1">&gt; Backend</p>
+              <div className="flex flex-wrap gap-2 ml-4 mb-3">
+                <SkillPill size={"sm"} pill="Node.js" />
+                <SkillPill size={"sm"} pill="Express" />
+                <SkillPill size={"sm"} pill="Python" />
+                <SkillPill size={"sm"} pill="Flask" />
+                <SkillPill size={"sm"} pill="MongoDB" />
+              </div>
+
+              {/* Tools & Misc */}
+              <p className="text-giorno-500 mt-2 mb-1">&gt; Tools & Misc</p>
+              <div className="flex flex-wrap gap-2 ml-4 mb-3">
+                <SkillPill size={"sm"} pill="Git" />
+                <SkillPill size={"sm"} pill="Docker" />
+                <SkillPill size={"sm"} pill="VS Code" />
+              </div>
+            </div>
+            {/* <div className="absolute bottom-6 text-gray-500 text-sm animate-terminal-bounce">
+              ↓ scroll
+            </div> */}
+          </section>
+          <section
+            ref={contactRef}
+            id="contact"
+            className="relative min-h-full flex items-center justify-center px-4"
+          >
+            <div className="bg-deepblue-500 w-full max-w-4xl p-4 border border-gray-700">
+              {/* Terminal header */}
+              <h1 className="mb-4">
+                <span className="text-jotaro-500">sopuru</span>
+                @portfolio:~$ cat contact.txt
+              </h1>
+
+              {/* Contact info */}
+              <div className="space-y-2 text-gray-300 ml-4">
+                <p>
+                  <span className="text-giorno-500">&gt;</span> Email:
+                  <a
+                    href="mailto:sopuruani41@gmail.com"
+                    className="text-jotaro-500 ml-1"
+                  >
+                    sopuruani41@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <span className="text-giorno-500">&gt;</span> GitHub:
+                  <a
+                    href="https://github.com/username"
+                    className="text-jotaro-500 ml-1"
+                  >
+                    github/sopuru
+                  </a>
+                </p>
+                <p>
+                  <span className="text-giorno-500">&gt;</span> LinkedIn:
+                  <a
+                    href="https://linkedin.com/in/sopuru"
+                    className="text-jotaro-500 ml-1"
+                  >
+                    linkedin/sopuru
+                  </a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </>
   );
 }
