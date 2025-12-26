@@ -7,6 +7,7 @@ import Homepage from "@/components/Home";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const homeRef = useRef<HTMLElement>(null);
@@ -71,9 +72,10 @@ export default function Home() {
           <section
             ref={contactRef}
             id="contact"
-            className="relative min-h-full flex items-center justify-center px-4"
+            className="relative min-h-full flex flex-col px-4"
           >
             <Contact />
+            <Footer />
           </section>
         </main>
       </div>
