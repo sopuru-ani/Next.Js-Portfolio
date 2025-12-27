@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "reset": "rmdir /s /q .next node_modules && npm install"
+    "reset": "rmdir /s /q .next node_modules && npm install",
+    "https": "next dev --experimental-https"
   },
   "dependencies": {
     "jetbrains-mono": "^1.0.6",
