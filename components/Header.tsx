@@ -46,7 +46,7 @@ function Header({
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     Object.values(sectionRefs).forEach((ref) => {
@@ -83,7 +83,7 @@ function Header({
         </ul>
         <a
           href="/resume.pdf"
-          className="decoration-0 text-sm sm:text-lg px-3 py-2 hover:text-jotaro-500 hidden sm:inline-block"
+          className="decoration-0 text-sm md:text-lg px-3 py-2 hover:text-jotaro-500 hidden md:inline-block"
           target="_blank"
         >
           <FileUser className="inline w-4 h-4" />
@@ -91,7 +91,7 @@ function Header({
         </a>
         <a
           href="/resume.pdf"
-          className="flex flex-col items-center justify-center fixed bottom-8 right-8 decoration-0 text-4xl px-3 py-2 sm:hidden backdrop-brightness-50 backdrop-blur-md p-2.5 rounded-lg"
+          className="flex flex-col items-center justify-center fixed bottom-8 right-8 decoration-0 text-4xl px-3 py-2 md:hidden backdrop-brightness-50 backdrop-blur-md p-2.5 rounded-lg"
           target="_blank"
         >
           <FileUser className="inline w-8 h-8" />

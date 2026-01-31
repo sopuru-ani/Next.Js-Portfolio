@@ -36,7 +36,7 @@ export default function Home() {
   };
   return (
     <>
-      <div className="flex flex-col h-dvh w-full">
+      <div className="flex flex-col h-dvh w-dvw">
         <Header sectionRefs={sectionRefs} />
         <main className="flex-1 w-full overflow-y-auto px-2 scroll-smooth no-scrollbar">
           <motion.section

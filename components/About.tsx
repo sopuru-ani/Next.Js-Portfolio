@@ -1,7 +1,7 @@
 function About() {
   return (
     <>
-      <div className="p-2 bg-deepblue-500 w-full max-w-300 min-h-full wrap-normal border border-gray-700 mb-20 sm:mb-0">
+      <div className="p-2 bg-deepblue-500 w-full max-w-300 min-h-full wrap-normal border border-gray-700 mb-20 md:mb-0">
         <h1 className="mb-3">
           <span className="text-jotaro-500">sopuru</span>
           @portfolio:~$ cat about.txt

@@ -7,8 +7,8 @@ type Props = {
   title: string;
   description: string;
   tech: string[];
-  view: string;
-  source: string;
+  view?: string;
+  source?: string;
 };
 function ProjectTiles({ title, description, tech, view, source }: Props) {
   return (
@@ -25,12 +25,16 @@ function ProjectTiles({ title, description, tech, view, source }: Props) {
         ))}
       </div>
       <div className="ml-4 flex gap-4 text-jotaro-500">
-        <a href={view} target="_blank">
-          [view]
-        </a>
-        <a href={source} target="_blank">
-          [source]
-        </a>
+        {view && (
+          <a href={view} target="_blank">
+            [view]
+          </a>
+        )}
+        {source && (
+          <a href={source} target="_blank">
+            [source]
+          </a>
+        )}
       </div>
     </div>
   );

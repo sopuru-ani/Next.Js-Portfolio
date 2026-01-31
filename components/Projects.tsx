@@ -32,6 +32,21 @@ function Projects() {
           view="https://qr-manager.net"
           source="https://github.com/sopuru-ani/QR-Manager"
         />
+        <ProjectTiles
+          title="domus"
+          description="A full-stack Resident Assistant management system designed to streamline resident tracking, incidents, and daily RA workflows"
+          tech={[
+            "React",
+            "Next.js",
+            "Tailwind",
+            "Shadcn",
+            "JavaScript",
+            "TypeScript",
+            "MongoDB",
+            "Node.js",
+          ]}
+          source="https://github.com/sopuru-ani/RA-PWA"
+        />
       </div>
     </div>
   );

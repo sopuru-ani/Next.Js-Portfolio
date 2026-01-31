@@ -25,7 +25,7 @@ function Homepage() {
         </div>
 
         {/* File content */}
-        <div className="p-3 text-lg">
+        <div className="p-3 text-sm md:text-lg">
           <p className="terminal-path pb-1 mb-1 border-b border-gray-700">
             <span className="user text-white">app</span>
             <span className="path text-white"> &gt; page.tsx &gt;</span>

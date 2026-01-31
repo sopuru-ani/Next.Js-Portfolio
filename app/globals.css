@@ -124,7 +124,7 @@
   }
 
   .terminal-nav ul {
-    @apply flex  text-sm sm:text-lg;
+    @apply flex  text-sm md:text-lg;
   }
 
   .terminal-nav li {
