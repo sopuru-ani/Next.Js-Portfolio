@@ -4,18 +4,24 @@ function useTypedText(text: string = "", speed: number = 100) {
   const [displayed, setDisplayed] = useState("");
 
   useEffect(() => {
-    if (!text) return setDisplayed("");
+    setDisplayed("");
+    if (!text) return;
 
-    setDisplayed(""); // clear old text immediately
-    let i = -1;
+    let i = 1;
+    setDisplayed(text.slice(0, i));
 
     const interval = setInterval(() => {
-      setDisplayed((prev) => prev + text.charAt(i));
       i++;
-      if (i >= text.length) clearInterval(interval);
+      setDisplayed(text.slice(0, i));
+
+      if (i >= text.length) {
+        clearInterval(interval);
+      }
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [text, speed]);
 
   return displayed;
