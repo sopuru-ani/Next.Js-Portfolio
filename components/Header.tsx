@@ -69,7 +69,7 @@ function Header({
       </div>
 
       {/* Bottom Layer: Navigation */}
-      <nav className="terminal-nav -mb-2 -mx-2 border-t border-t-gray-700 flex flex-row justify-between ">
+      <nav className="overflow-y-auto terminal-nav -mb-2 -mx-2 border-t border-t-gray-700 flex flex-row justify-between ">
         <ul>
           {sections.map((section) => (
             <li
