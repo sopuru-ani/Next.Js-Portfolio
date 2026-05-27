@@ -14,8 +14,8 @@ function Projects() {
           title="jojo-stand-encyclopedia"
           description="A JoJo-themed web app with searchable Stand cards."
           tech={["HTML", "CSS", "JavaScript", "Express", "MongoDB", "Node.js"]}
-          view="https://qr-manager.net"
-          source="https://github.com/sopuru-ani/QR-Manager"
+          // view="https://qr-manager.net"
+          source="https://github.com/sopuru-ani/Jojo-Stand-Card"
         />
         <ProjectTiles
           title="qr-manager"
