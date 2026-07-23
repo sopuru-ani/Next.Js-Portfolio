@@ -15,7 +15,9 @@ function Skills() {
       <div className="flex flex-wrap gap-2 ml-4 mb-3">
         <SkillPill size={"sm"} pill="React" />
         <SkillPill size={"sm"} pill="Next.js" />
+        <SkillPill size={"sm"} pill="React Native / Expo" />
         <SkillPill size={"sm"} pill="Tailwind" />
+        <SkillPill size={"sm"} pill="Vite" />
         <SkillPill size={"sm"} pill="JavaScript" />
         <SkillPill size={"sm"} pill="TypeScript" />
       </div>
@@ -24,11 +26,24 @@ function Skills() {
       <p className="text-giorno-500 mt-2 mb-1">&gt; Backend</p>
       <div className="flex flex-wrap gap-2 ml-4 mb-3">
         <SkillPill size={"sm"} pill="Node.js" />
-        <SkillPill size={"sm"} pill="JavaScript" />
         <SkillPill size={"sm"} pill="Express" />
         <SkillPill size={"sm"} pill="Python" />
-        <SkillPill size={"sm"} pill="Flask" />
+        <SkillPill size={"sm"} pill="FastAPI" />
+        <SkillPill size={"sm"} pill="REST APIs" />
+        <SkillPill size={"sm"} pill="JWT Auth" />
         <SkillPill size={"sm"} pill="MongoDB" />
+        <SkillPill size={"sm"} pill="Firebase" />
+      </div>
+
+      {/* AI / Data */}
+      <p className="text-giorno-500 mt-2 mb-1">&gt; AI / Data</p>
+      <div className="flex flex-wrap gap-2 ml-4 mb-3">
+        <SkillPill size={"sm"} pill="LangChain" />
+        <SkillPill size={"sm"} pill="LangGraph" />
+        <SkillPill size={"sm"} pill="RAG" />
+        <SkillPill size={"sm"} pill="Pinecone" />
+        <SkillPill size={"sm"} pill="Sentence Transformers" />
+        <SkillPill size={"sm"} pill="Gemini Vision" />
       </div>
 
       {/* Tools & Misc */}
@@ -37,7 +52,9 @@ function Skills() {
         <SkillPill size={"sm"} pill="Git" />
         <SkillPill size={"sm"} pill="VS Code" />
         <SkillPill size={"sm"} pill="Vercel" />
-        <SkillPill size={"sm"} pill="Firebase" />
+        <SkillPill size={"sm"} pill="Docker" />
+        <SkillPill size={"sm"} pill="Postman" />
+        <SkillPill size={"sm"} pill="pipx" />
         <SkillPill size={"sm"} pill="Render" />
       </div>
     </div>

@@ -10,7 +10,7 @@ function About() {
         <div className="space-y-2 leading-relaxed">
           <p>
             <span className="text-giorno-500">&gt;</span> Computer science
-            student who loves turning ideas into functional, polished, and
+            graduate who loves turning ideas into functional, polished, and
             interactive web apps.
           </p>
 

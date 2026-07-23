@@ -39,7 +39,7 @@ function Homepage() {
 
           <p>
             <span className="text-gray-500 mr-2">2</span>
-            Computer Science Student | Full Stack Developer
+            CS Grad (May 2026) | Full Stack & AI
           </p>
 
           <p>
