@@ -9,7 +9,7 @@ function Header({
   sectionRefs: Record<string, React.RefObject<HTMLElement | null>>;
 }) {
   const [isActive, setIsActive] = useState("Home");
-  const sections = ["Home", "About", "Projects", "Skills", "Contact"];
+  const sections = ["Home", "About", "Projects", "Skills", "Misc", "Contact"];
   const typedText = useTypedText(isActive ? isActive.toLowerCase() : ""); // e.g., 'home', 'about'
   const isProgrammaticScroll = useRef(false);
 
